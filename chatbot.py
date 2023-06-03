@@ -7,6 +7,12 @@ from bs4 import BeautifulSoup
 import speech_recognition as sr
 import gtts
 import pyaudio
+import openai
+openai.api_key = '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'
+import os
+import sys
+
+
    
 
 
@@ -66,6 +72,7 @@ class ChatBot(object):
 
 
     #FUNCTION DECLARATION BACK END 
+    
 
 
     def enter_func(self,event):
@@ -82,6 +89,10 @@ class ChatBot(object):
 
     
 
+   
+
+    
+
 
     def send(self):
         send='\t\t\t'+'YOU:   '+self.entry.get()
@@ -95,6 +106,8 @@ class ChatBot(object):
         else:
             self.msg==''   
             self.level_11.config(text=self.msg,fg='red')
+
+            
 
         if  (self.entry.get()=='hello'):   
             self.text.insert(END,'\n\n'+'Bot: Hi,I am Captain Rounak,How may I help you?')
@@ -139,7 +152,7 @@ class ChatBot(object):
         else: 
             self.text.insert(END,'\n\n'+'Bot:Sorry, I couldnt get that.Could you please repeat?')
 
-    
+       
 
 
 
@@ -149,6 +162,7 @@ if __name__ == '__main__':
     root=Tk()
     obj=ChatBot(root)
     root.mainloop()
+
 
 
 
